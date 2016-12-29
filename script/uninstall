@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cd "$(dirname "$0")/.."
+
+echo "Uninstalling ioreg-api..."
+forever stop ioreg-api > /dev/null 2>&1
+launchctl unload ~/Library/LaunchAgents/org.ioreg-api.plist
+rm ~/Library/LaunchAgents/org.ioreg-api.plist

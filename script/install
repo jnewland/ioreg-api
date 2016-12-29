@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+echo "Installing ioreg-api..."
+
+APP_PATH=`pwd`
+USER_NAME=`whoami`
+
+mkdir -p ~/Library/LaunchAgents
+
+cp config/org.ioreg-api.plist ~/Library/LaunchAgents/org.ioreg-api.plist
+
+sed -i '' -e "s#%USER%#$USER_NAME#g" ~/Library/LaunchAgents/org.ioreg-api.plist
+sed -i '' -e "s#%PATH%#$APP_PATH#g" ~/Library/LaunchAgents/org.ioreg-api.plist
+
+launchctl load -w -F ~/Library/LaunchAgents/org.ioreg-api.plist
