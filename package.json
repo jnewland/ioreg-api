@@ -15,9 +15,9 @@
     "url": "https://github.com/jnewland/ioreg-api/issues"
   },
   "dependencies": {
-    "express": "^4.12.4",
-    "morgan": "^1.6.1",
     "execa": "0.4.0",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
     "plist": "1.2.0"
   }
 }
